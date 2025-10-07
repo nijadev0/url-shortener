@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DJANGO_SETTINGS_MODULE=urlshortener.settings
+      - SECRET_KEY=your-secret-key-here-change-in-production
+      - DEBUG=True
+      - ALLOWED_HOSTS=localhost
